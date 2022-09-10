@@ -1,4 +1,4 @@
-import { ADD, GET_FAILURE, GET_LOADING, GET_SUCESS, REDUCE } from "./actionTypeCreater"
+import { ADD, GET_FAILURE, GET_LOADING, GET_SUCESS, POST_FAILURE, POST_LOADING, POST_SUCESS, REDUCE } from "./actionTypeCreater"
 
 const initialState={
    count:10,
@@ -22,6 +22,15 @@ const Reducer = (oldstate=initialState,action) => {
       return({...oldstate,todos:action.payload,IsLoading:false})
    }
    case GET_FAILURE:{
+      return({...oldstate,IsError: true,IsLoading:false})
+   }
+   case POST_LOADING:
+      return{...oldstate,IsLoading: true}
+   
+   case POST_SUCESS:{
+      return({...oldstate,todos:action.payload,IsLoading:false})
+   }
+   case POST_FAILURE:{
       return({...oldstate,IsError: true,IsLoading:false})
    }
 

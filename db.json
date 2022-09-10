@@ -4,6 +4,21 @@
       "id": 1,
       "title": "json-server",
       "status": false
+    },
+    {
+      "title": "react",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "redux",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "useSelector",
+      "status": false,
+      "id": 4
     }
   ]
 }

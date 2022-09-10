@@ -1,17 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Todosinput = ({AddTodos}) => {
+const Todosinput = ({handeladdtodos}) => {
     const[text,setText] = useState("");
 const handelAdd=()=>{
 if(text){
-    AddTodos(text);
+  handeladdtodos(text);
     setText("");
 }
 }
   return (
     <div>
-      <input type="text" placeholder='write to add todos...'  autoFocus onChange={(e)=>e.target.value} />
+      <input value={text} type="text" placeholder='write to add todos...'  autoFocus onChange={(e)=>setText(e.target.value)} />
       <button onClick={handelAdd} >Add</button>
     </div>
   )
